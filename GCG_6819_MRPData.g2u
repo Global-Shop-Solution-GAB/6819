@@ -1,0 +1,1288 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.frmAddLines..Create(BaseForm)
+Gui.frmAddLines..Caption("PART MRP")
+Gui.frmAddLines..Size(1268,929)
+Gui.frmAddLines..MinX(0)
+Gui.frmAddLines..MinY(0)
+Gui.frmAddLines..Position(0,0)
+Gui.frmAddLines..AlwaysOnTop(False)
+Gui.frmAddLines..FontName("Tahoma")
+Gui.frmAddLines..FontSize(8.25)
+Gui.frmAddLines..ControlBox(True)
+Gui.frmAddLines..MaxButton(True)
+Gui.frmAddLines..MinButton(True)
+Gui.frmAddLines..MousePointer(0)
+Gui.frmAddLines..Moveable(True)
+Gui.frmAddLines..Sizeable(True)
+Gui.frmAddLines..ShowInTaskBar(True)
+Gui.frmAddLines..TitleBar(True)
+Gui.frmAddLines..Event(UnLoad,frmAddLines_UnLoad)
+Gui.frmAddLines.GsGridLines.Create(GsGridControl)
+Gui.frmAddLines.GsGridLines.Enabled(True)
+Gui.frmAddLines.GsGridLines.Visible(True)
+Gui.frmAddLines.GsGridLines.Zorder(0)
+Gui.frmAddLines.GsGridLines.Size(1246,822)
+Gui.frmAddLines.GsGridLines.Position(11,56)
+Gui.frmAddLines.GsGridLines.Event(ColumnFilterChanged,GsGridLines_ColumnFilterChanged)
+Gui.frmAddLines.cmdRefresh.Create(Button)
+Gui.frmAddLines.cmdRefresh.Enabled(True)
+Gui.frmAddLines.cmdRefresh.Visible(True)
+Gui.frmAddLines.cmdRefresh.Zorder(0)
+Gui.frmAddLines.cmdRefresh.Size(94,29)
+Gui.frmAddLines.cmdRefresh.Position(15,12)
+Gui.frmAddLines.cmdRefresh.Caption("Refresh")
+Gui.frmAddLines.cmdRefresh.FontName("Tahoma")
+Gui.frmAddLines.cmdRefresh.FontSize(7.8)
+Gui.frmAddLines.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.frmAddLines.cmdExport.Create(Button)
+Gui.frmAddLines.cmdExport.Enabled(True)
+Gui.frmAddLines.cmdExport.Visible(True)
+Gui.frmAddLines.cmdExport.Zorder(0)
+Gui.frmAddLines.cmdExport.Size(94,29)
+Gui.frmAddLines.cmdExport.Position(906,17)
+Gui.frmAddLines.cmdExport.Caption("Export")
+Gui.frmAddLines.cmdExport.FontName("Tahoma")
+Gui.frmAddLines.cmdExport.FontSize(7.8)
+Gui.frmAddLines.cmdExport.Event(Click,cmdExport_Click)
+Gui.frmAddLines.cmddirectory.Create(Button)
+Gui.frmAddLines.cmddirectory.Enabled(True)
+Gui.frmAddLines.cmddirectory.Visible(True)
+Gui.frmAddLines.cmddirectory.Zorder(0)
+Gui.frmAddLines.cmddirectory.Size(94,29)
+Gui.frmAddLines.cmddirectory.Position(798,17)
+Gui.frmAddLines.cmddirectory.Caption("Directory")
+Gui.frmAddLines.cmddirectory.FontName("Tahoma")
+Gui.frmAddLines.cmddirectory.FontSize(7.8)
+Gui.frmAddLines.cmddirectory.Event(Click,cmddirectory_Click)
+Gui.frmAddLines.frameDIR.Create(Frame)
+Gui.frmAddLines.frameDIR.Enabled(True)
+Gui.frmAddLines.frameDIR.Visible(False)
+Gui.frmAddLines.frameDIR.Zorder(0)
+Gui.frmAddLines.frameDIR.Size(483,208)
+Gui.frmAddLines.frameDIR.Position(728,79)
+Gui.frmAddLines.frameDIR.Caption("")
+Gui.frmAddLines.frameDIR.FontName("Tahoma")
+Gui.frmAddLines.frameDIR.FontSize(7.8)
+Gui.frmAddLines.cmdOutbound.Create(Button)
+Gui.frmAddLines.cmdOutbound.Enabled(True)
+Gui.frmAddLines.cmdOutbound.Visible(True)
+Gui.frmAddLines.cmdOutbound.Zorder(0)
+Gui.frmAddLines.cmdOutbound.Size(33,21)
+Gui.frmAddLines.cmdOutbound.Position(431,15)
+Gui.frmAddLines.cmdOutbound.Caption("^")
+Gui.frmAddLines.cmdOutbound.FontName("Tahoma")
+Gui.frmAddLines.cmdOutbound.FontSize(7.8)
+Gui.frmAddLines.cmdOutbound.Parent("frameDIR")
+Gui.frmAddLines.cmdOutbound.Event(Click,cmdOutbound_Click)
+Gui.frmAddLines.lbl2.Create(Label,"EDI Outbound",True,78,16,0,15,15,True,0,"Tahoma",7.8,,0,0)
+Gui.frmAddLines.lbl2.BorderStyle(0)
+Gui.frmAddLines.lbl2.Parent("frameDIR")
+Gui.frmAddLines.lbl3.Create(Label,"PO EDI",True,40,16,0,15,45,True,0,"Tahoma",7.8,,0,0)
+Gui.frmAddLines.lbl3.BorderStyle(0)
+Gui.frmAddLines.lbl3.Parent("frameDIR")
+Gui.frmAddLines.lbl4.Create(Label,"PO Email",True,51,16,0,15,75,True,0,"Tahoma",7.8,,0,0)
+Gui.frmAddLines.lbl4.BorderStyle(0)
+Gui.frmAddLines.lbl4.Parent("frameDIR")
+Gui.frmAddLines.lbl5.Create(Label,"PO Internal",True,64,16,0,15,106,True,0,"Tahoma",7.8,,0,0)
+Gui.frmAddLines.lbl5.BorderStyle(0)
+Gui.frmAddLines.lbl5.Parent("frameDIR")
+Gui.frmAddLines.lbl6.Create(Label,"Email Reporting",True,90,16,0,15,136,True,0,"Tahoma",7.8,,0,0)
+Gui.frmAddLines.lbl6.BorderStyle(0)
+Gui.frmAddLines.lbl6.Parent("frameDIR")
+Gui.frmAddLines.txtEDIoutbound.Create(TextBox,"",True,302,22,0,119,15,True,0,"Tahoma",7.8,,1)
+Gui.frmAddLines.txtEDIoutbound.Parent("frameDIR")
+Gui.frmAddLines.txtEmailReport.Create(TextBox,"",True,302,22,0,119,136,True,0,"Tahoma",7.8,,1)
+Gui.frmAddLines.txtEmailReport.Parent("frameDIR")
+Gui.frmAddLines.cmdPOEDI.Create(Button)
+Gui.frmAddLines.cmdPOEDI.Enabled(True)
+Gui.frmAddLines.cmdPOEDI.Visible(True)
+Gui.frmAddLines.cmdPOEDI.Zorder(0)
+Gui.frmAddLines.cmdPOEDI.Size(33,21)
+Gui.frmAddLines.cmdPOEDI.Position(431,45)
+Gui.frmAddLines.cmdPOEDI.Caption("^")
+Gui.frmAddLines.cmdPOEDI.FontName("Tahoma")
+Gui.frmAddLines.cmdPOEDI.FontSize(7.8)
+Gui.frmAddLines.cmdPOEDI.Parent("frameDIR")
+Gui.frmAddLines.cmdPOEDI.Event(Click,cmdPOEDI_Click)
+Gui.frmAddLines.cmdPOEmail.Create(Button)
+Gui.frmAddLines.cmdPOEmail.Enabled(True)
+Gui.frmAddLines.cmdPOEmail.Visible(True)
+Gui.frmAddLines.cmdPOEmail.Zorder(0)
+Gui.frmAddLines.cmdPOEmail.Size(33,21)
+Gui.frmAddLines.cmdPOEmail.Position(431,75)
+Gui.frmAddLines.cmdPOEmail.Caption("^")
+Gui.frmAddLines.cmdPOEmail.FontName("Tahoma")
+Gui.frmAddLines.cmdPOEmail.FontSize(7.8)
+Gui.frmAddLines.cmdPOEmail.Parent("frameDIR")
+Gui.frmAddLines.cmdPOEmail.Event(Click,cmdPOEmail_Click)
+Gui.frmAddLines.cmdPOInternal.Create(Button)
+Gui.frmAddLines.cmdPOInternal.Enabled(True)
+Gui.frmAddLines.cmdPOInternal.Visible(True)
+Gui.frmAddLines.cmdPOInternal.Zorder(0)
+Gui.frmAddLines.cmdPOInternal.Size(33,21)
+Gui.frmAddLines.cmdPOInternal.Position(431,106)
+Gui.frmAddLines.cmdPOInternal.Caption("^")
+Gui.frmAddLines.cmdPOInternal.FontName("Tahoma")
+Gui.frmAddLines.cmdPOInternal.FontSize(7.8)
+Gui.frmAddLines.cmdPOInternal.Parent("frameDIR")
+Gui.frmAddLines.cmdPOInternal.Event(Click,cmdPOInternal_Click)
+Gui.frmAddLines.cmdEDISave.Create(Button)
+Gui.frmAddLines.cmdEDISave.Enabled(True)
+Gui.frmAddLines.cmdEDISave.Visible(True)
+Gui.frmAddLines.cmdEDISave.Zorder(0)
+Gui.frmAddLines.cmdEDISave.Size(67,25)
+Gui.frmAddLines.cmdEDISave.Position(17,174)
+Gui.frmAddLines.cmdEDISave.Caption("Save")
+Gui.frmAddLines.cmdEDISave.FontName("Tahoma")
+Gui.frmAddLines.cmdEDISave.FontSize(7.8)
+Gui.frmAddLines.cmdEDISave.Parent("frameDIR")
+Gui.frmAddLines.cmdEDISave.Event(Click,cmdEDISave_Click)
+Gui.frmAddLines.txtEDIPO.Create(TextBox,"",True,302,22,0,119,45,True,0,"Tahoma",7.8,,1)
+Gui.frmAddLines.txtEDIPO.Parent("frameDIR")
+Gui.frmAddLines.cmdEDISave2.Create(Button)
+Gui.frmAddLines.cmdEDISave2.Enabled(True)
+Gui.frmAddLines.cmdEDISave2.Visible(True)
+Gui.frmAddLines.cmdEDISave2.Zorder(0)
+Gui.frmAddLines.cmdEDISave2.Size(67,25)
+Gui.frmAddLines.cmdEDISave2.Position(97,174)
+Gui.frmAddLines.cmdEDISave2.Caption("Close")
+Gui.frmAddLines.cmdEDISave2.FontName("Tahoma")
+Gui.frmAddLines.cmdEDISave2.FontSize(7.8)
+Gui.frmAddLines.cmdEDISave2.Parent("frameDIR")
+Gui.frmAddLines.cmdEDISave2.Event(Click,cmdEDISave2_Click)
+Gui.frmAddLines.txtPOInternal.Create(TextBox,"",True,302,22,0,119,106,True,0,"Tahoma",7.8,,1)
+Gui.frmAddLines.txtPOInternal.Parent("frameDIR")
+Gui.frmAddLines.txtPOEmail.Create(TextBox,"",True,302,22,0,119,75,True,0,"Tahoma",7.8,,1)
+Gui.frmAddLines.txtPOEmail.Parent("frameDIR")
+Gui.frmAddLines.cmdForecast.Create(Button)
+Gui.frmAddLines.cmdForecast.Enabled(True)
+Gui.frmAddLines.cmdForecast.Visible(True)
+Gui.frmAddLines.cmdForecast.Zorder(0)
+Gui.frmAddLines.cmdForecast.Size(94,29)
+Gui.frmAddLines.cmdForecast.Position(143,13)
+Gui.frmAddLines.cmdForecast.Caption("INV507/U")
+Gui.frmAddLines.cmdForecast.FontName("Tahoma")
+Gui.frmAddLines.cmdForecast.FontSize(7.8)
+Gui.frmAddLines.cmdForecast.Event(Click,cmdForecast_Click)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+Function.Intrinsic.UI.UsePixels ' Allows you to use Pixels instead of Twips throughout
+
+v.local.fRet.Declare
+v.Local.lRET.Declare
+
+f.Intrinsic.Control.CallSub(ReadDirSetup)
+gui.frmAddLines.GsGridLines.Anchor(15)
+'	gui.frmAddLines.cmdSave.Anchor(10)
+gui.frmAddLines..Show 
+
+
+Program.Sub.Main.End
+
+Program.Sub.Get_Data.Start
+f.Intrinsic.Control.Try
+
+v.Local.ssql.Declare
+V.Local.sRet.Declare
+v.Local.sPart.Declare
+v.Local.i.Declare
+v.Local.iEnd.Declare
+v.local.lRet.Declare
+v.local.fRet.Declare
+v.Local.j.Declare(long)
+v.Local.lTot.Declare
+v.Local.lLastTotBal.Declare
+v.Local.k.Declare(long)
+v.Local.sMRP.Declare
+v.Local.sFilter.Declare
+v.Local.lSeq.Declare
+v.Local.ltemp.Declare
+v.Local.dDT.Declare
+v.Local.smsg.Declare
+v.Local.lDay.Declare
+v.Local.dDATEdue.Declare
+v.Local.sDay.Declare
+v.Local.lDaysDiff.Declare
+v.Local.lDayDUEDATE.Declare						
+
+
+F.ODBC.Connection!conx.OpenCompanyConnection(300)
+'code_sort in ('EDI','EMAIL','INTERNAL')
+'v.Local.ssql.Set("select a.Part,a.Location,QTY_ONHAND,QTY_REORDER,QTY_ORDER,(select top 1 V.vendor from INV_CROSS_REF C join V_VENDOR_MASTER V on C.vendor = V.vendor and C.part = B.Part where v.vendor <> '' ) from INVENTORY_MST2 A join INVENTORY_MSTR B on A.part = B.part  where Code_Source IN ('P','J') and FLAG_INACTIVE <> 'Y' order by A.part")
+'v.Local.ssql.Set("select a.Part,a.Location,QTY_ONHAND,QTY_REORDER,QTY_ORDER,(select top 1 vendor from INV_CROSS_REF C  where C.part = B.Part and vendor <> '' ) as vendor from INVENTORY_MST2 A join INVENTORY_MSTR B on A.part = B.part  where Code_Source IN ('P','J') and FLAG_INACTIVE <> 'Y' order by A.part")
+
+v.Local.sMRP.Set("Case type When 1 Then 'PO' When 2 Then 'JOB' When 3 Then 'Forecast' When 4 Then 'Transit' When 5 Then 'Rework' When 'T' Then 'Transfer' When 'C' Then 'Container' When 6 Then 'Order' When 7 Then 'Job' When 8 Then 'Shipped' When 9 Then 'Forecast' When 'A' Then 'Bom Parent' When 'I' Then 'Invoicing (Selected)' When 'K' Then 'Blanket' End As 'FTYPE'")
+
+
+'v.Local.ssql.Set("select a.Part,a.Location,QTY_ONHAND,QTY_REORDER,QTY_ORDER,(select top 1 vendor from INV_CROSS_REF C  where C.part = B.Part and vendor <> '' ) as vendor ,seq, due_date, type, wo, suff, if(type in ('6','7','8','9','A','I','K'), -1,1) * open_qty AS QTY,,DATEADD(day,B.Time_Material_Lead,now()) AS 'leadDate' from INVENTORY_MST2 A join INVENTORY_MSTR B on A.part = B.part  Join PART_MRP_DESCR MRP on A.part = MRP.part where Code_Source IN ('P','J') and a.part = '02-00235-00LF    A' order  by a.Part,SEQ")	
+'and a.part = '239D1377P006'
+f.Intrinsic.String.Build("select a.Part,a.Location,QTY_ONHAND,{0},QTY_REORDER,QTY_ORDER,(select top 1 vendor from INV_CROSS_REF C  where C.part = B.Part and vendor <> '' ) as vendor,(select top 1 Mfg_Part from v_INV_CROSS_REF CRS  where  CRS.vendor <> '' and CRS.part = B.part) VendorPart,b.Description ,seq, due_date, type, wo, suff, if(type in ('6','7','8','9','A','I','K'), -1,1) * open_qty AS QTY,DATEADD(day,B.Time_Material_Lead,now()) AS 'leadDate',UM_Purchasing,Amt_Cost from INVENTORY_MST2 A join INVENTORY_MSTR B on A.part = B.part  Join PART_MRP_DESCR MRP on A.part = MRP.part where Code_Source IN ('P','J')  order  by a.Part,SEQ",v.Local.sMRP,v.Local.Ssql)
+'and MRP.part = '239D1377P006'
+'f.Intrinsic.String.Build("select a.Part,a.Location,QTY_ONHAND,{0},QTY_REORDER,QTY_ORDER,(select top 1 vendor from INV_CROSS_REF C  where C.part = B.Part and vendor <> '' ) as vendor,(select top 1 Mfg_Part from v_INV_CROSS_REF CRS  where  CRS.vendor <> '' and CRS.part = B.part) VendorPart,b.Description ,seq, due_date, type, wo, suff, if(type in ('6','7','8','9','A','I','K'), -1,1) * open_qty AS QTY,DATEADD(day,B.Time_Material_Lead,now()) AS 'leadDate' from INVENTORY_MST2 A join INVENTORY_MSTR B on A.part = B.part  Join PART_MRP_DESCR MRP on A.part = MRP.part where Code_Source IN ('P','J') and a.part IN ('02-00235-00LF    A','4W7J-19520-AA    AA') order  by a.Part,SEQ",v.Local.sMRP,v.Local.Ssql)
+
+F.Intrinsic.UI.InvokeWaitDialog("Loading")
+f.Data.Datatable.CreateFromSQL("DTLines","conx",v.Local.Ssql,true)
+
+'f.Data.Datatable.AddColumn("DTLines","c1","string","'")
+
+'With quotes for query
+'f.Data.Datatable.AddExpressionColumn("DTLines","PartQ","string","[c1]+[Part]+[c1]")
+f.Data.DataView.Create("DTLines","DVLines")
+'uncomment for final Testng
+'f.Data.DataView.SetFilter("DTLines","DVLines","vendor<>''")
+'Function.Intrinsic.Debug.InvokeDebugger
+
+'Function.Intrinsic.Debug.Stop
+Function.Intrinsic.Debug.Stop
+
+
+f.Intrinsic.Control.If(v.DataView.DTLines!DVLines.RowCount,>,0)
+
+	Function.Data.DataTable.SetValueFormat("DTLines",-1,"due_date","due_date","mm/dd/yyyy")
+	Function.Data.DataTable.SetValueFormat("DTLines",-1,"leadDate","leadDate","mm/dd/yyyy")
+	v.Local.Ssql.Set("select rtrim(vendor),rtrim(code_sort) from v_VENDOR_MASTER where ltrim(code_sort) in ('EDI','EMAIL','INTERNAL')")
+	f.Data.Datatable.AddColumn("DTLines","CType","string")
+	F.Data.Dictionary.CreateFromSql("dtXdic","conx",v.Local.SSQL)
+	f.Data.Dictionary.SetDefaultReturn("dtXdic","")
+	f.Data.DataTable.FillFromDictionary("DTLines","dtXdic","vendor","CType")
+	f.Data.Dictionary.Close("dtXdic")
+
+'uncomment for final Testng
+	v.Local.Ssql.Set("select rtrim(vendor),Name_Vendor from v_VENDOR_MASTER where ltrim(code_sort) in ('EDI','EMAIL','INTERNAL')")
+''	v.Local.Ssql.Set("select rtrim(vendor),Name_Vendor from v_VENDOR_MASTER ")
+	f.Data.Datatable.AddColumn("DTLines","VName","string")
+	F.Data.Dictionary.CreateFromSql("dtXdic","conx",v.Local.SSQL)
+	f.Data.Dictionary.SetDefaultReturn("dtXdic","")
+	f.Data.DataTable.FillFromDictionary("DTLines","dtXdic","vendor","VName")
+	f.Data.Dictionary.Close("dtXdic")
+	
+	v.Local.Ssql.Set("select rtrim(v_VENDOR_ADDL.vendor),External_ID from v_VENDOR_MASTER join v_VENDOR_ADDL on v_VENDOR_MASTER.vendor = v_VENDOR_ADDL.vendor where ltrim(code_sort) in ('EDI','EMAIL','INTERNAL')")
+	f.Data.Datatable.AddColumn("DTLines","VExternalID","string")
+	F.Data.Dictionary.CreateFromSql("dtXdic","conx",v.Local.SSQL)
+	f.Data.Dictionary.SetDefaultReturn("dtXdic","")
+	f.Data.DataTable.FillFromDictionary("DTLines","dtXdic","vendor","VExternalID")
+	f.Data.Dictionary.Close("dtXdic")
+	
+'	f.Data.DataView.SetFilter("DTLines","DVLines","vendor<>'' and CType <> ''")
+
+'uncomment for final Testng
+'	v.Local.sFilter.Set("vendor<>'' or  CType <> ''")
+'	v.Local.sFilter.Set("CType <> ''")
+	f.Data.DataView.SetFilter("DTLines","DVLines",v.Local.sFilter)
+	
+	
+	f.Intrinsic.Control.If(v.DataView.DTLines!DVLines.RowCount,>,0)
+		Function.Data.DataView.ToString("DTLines","DVLines","Part","*!*",",",V.Local.sRet)	
+		f.Intrinsic.String.Split(V.Local.sRet,",",V.Local.sRet)
+		Function.Intrinsic.String.RemoveArrayDuplicates(V.Local.sRet,V.Local.sRet)
+		
+		f.Intrinsic.String.Join(V.Local.sRet,",",V.Local.sRet)
+
+		f.Data.Datatable.AddColumn("DTLines","QTY_Total","long")
+		f.Data.Datatable.AddColumn("DTLines","ROW_SEQ","long",0)
+		
+		Function.Data.DataTable.Clone("DTLines","DTClone",True)
+		Function.Data.DataTable.Clone("DTLines","DTDash",True)
+		
+		f.Data.Datatable.AddColumn("DTClone","QTYONHAND","long",0)
+		f.Data.Datatable.AddColumn("DTDash","QTYONHAND","long",0)
+'		
+'		Function.Intrinsic.Debug.InvokeDebugger
+'		Function.Intrinsic.Debug.Stop
+'		
+		f.Intrinsic.String.split(V.Local.sRet,",",V.Local.sRet)
+'		f.Data.DataView.Create("DTForecast","DVForecast",22,"","Part,DateORD")
+''		f.Data.DataView.SetSort("DT2","DVTest2","EMPL,CHARGE_DATE")
+		
+		
+		f.Intrinsic.Math.Add(V.Local.sRet.UBound,-1,v.Local.iEnd)
+		
+
+		f.Intrinsic.Control.For(v.Local.i,V.Local.sRet.LBound,V.Local.sRet.UBound,1)
+			f.Intrinsic.String.Build("Loading...{0}/{1}",V.Local.i,V.Local.sRet.UBound,v.Local.smsg)
+			F.Intrinsic.UI.ChangeWaitStatus(v.Local.smsg,V.Local.i,0,V.Local.sRet.UBound)
+			f.Intrinsic.String.Build("Part='{0}'",V.Local.sRet(v.Local.i),v.Local.sPart)
+			
+			f.Data.DataView.SetFilter("DTLines","DVLines",v.Local.sPart)
+		
+			f.Intrinsic.Control.If(v.DataView.DTLines!DVLines.RowCount,>,0)
+				v.Local.dDT.Set(v.DataView.DTLines!DVLines(0).due_date!FieldVal)
+				v.Local.sDay.Set(v.DataView.DTLines!DVLines(0).VExternalID!FieldValtrim)
+				f.Intrinsic.Control.If(v.Local.sDay,=,"MON")
+					v.Local.lDay.Set(2)
+				f.Intrinsic.Control.elseIf(v.Local.sDay,=,"TUE")
+					v.Local.lDay.Set(3)
+				f.Intrinsic.Control.elseIf(v.Local.sDay,=,"WED")
+					v.Local.lDay.Set(4)
+				f.Intrinsic.Control.elseIf(v.Local.sDay,=,"THU")
+					v.Local.lDay.Set(5)
+				f.Intrinsic.Control.elseIf(v.Local.sDay,=,"FRI")
+					v.Local.lDay.Set(6)
+				f.Intrinsic.Control.else
+					v.Local.lDay.Set(2)
+				f.Intrinsic.Control.EndIf
+				'uncomment
+'				f.Intrinsic.String.Build("Part='{0}' and Due_date >= #{1}#",V.Local.sRet(v.Local.i),v.DataView.DTLines!DVLines(0).leadDate!FieldVal,v.Local.sPart)
+				f.Data.DataView.SetFilter("DTLines","DVLines",v.Local.sPart)
+				'filter leadtime
+				f.Intrinsic.Control.If(v.DataView.DTLines!DVLines.RowCount,>,0)
+					f.Data.DataView.ToDataTable("DTLines","DVLines","DTCopy")
+					v.Local.lTot.Set(0)
+					v.Local.lSeq.Set(1)
+
+					
+					F.Data.DataTable.AddRowByMap("DTClone","FTYPE*!*ROW_SEQ*!*QTY_ONHAND*!*Part*!*Description*!*due_date*!*QTYONHAND","ON HAND",v.Local.lSeq,v.DataView.DTLines!DVLines(0).QTY_ONHAND!FieldVal,v.DataView.DTLines!DVLines(0).Part!FieldVal,v.DataView.DTLines!DVLines(0).Description!FieldVal,v.Local.dDT,v.DataView.DTLines!DVLines(0).QTY_ONHAND!FieldVal)
+					f.Intrinsic.Control.For(v.Local.j,0,v.DataTable.DTCopy.RowCount--,1)
+						f.Intrinsic.Math.Add(v.Local.lSeq,1,v.Local.lSeq)
+						f.Intrinsic.Control.If(v.Local.j,=,0)
+	'						v.Local.lTot.Set(v.DataTable.DTCopy(v.Local.j).QTY!FieldVal)
+							f.Intrinsic.Math.add(v.DataTable.DTCopy(0).QTY_ONHAND!FieldVal,v.DataTable.DTCopy(0).QTY!FieldVal,v.Local.lTot)
+							v.Local.lLastTotBal.set(v.Local.lTot)
+						f.Intrinsic.Control.else
+'							f.Intrinsic.Math.add(v.Local.j,-1,v.Local.k)
+'							f.Intrinsic.Math.add(v.DataTable.DTCopy(v.Local.j).QTY!FieldVal,v.DataTable.DTCopy(v.Local.k).QTY_Total!FieldVal,v.Local.lTot)
+							f.Intrinsic.Math.add(v.Local.lLastTotBal,v.DataTable.DTCopy(v.Local.j).QTY!FieldVal,v.Local.lTot)
+						f.Intrinsic.Control.EndIf
+						
+						
+'						f.Data.Datatable.SetValue("DTCopy",v.Local.J,"QTY_Total",v.Local.lTot)
+'						f.Data.Datatable.SetValue("DTCopy",v.Local.J,"ROW_SEQ",v.Local.lSeq)
+'						Function.Intrinsic.Debug.InvokeDebugger
+						Function.Intrinsic.Debug.Stop
+						
+					f.Intrinsic.Control.If(v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,>,v.Local.lTot)
+					'temp comment
+'					f.Intrinsic.Control.If(v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,>,v.Local.lLastTotBal)
+					f.Intrinsic.Control.AndIf(v.DataTable.DTCopy(v.Local.j).due_date!FieldVal,>,v.DataView.DTLines!DVLines(0).leadDate!FieldVal)
+'						f.Intrinsic.Control.If(v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,>,v.Local.lTot)
+						f.Intrinsic.Control.If(v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,>,v.Local.lTot)
+						'find difference
+'						Function.Intrinsic.Debug.Stop
+						
+							f.Intrinsic.Control.If(v.Local.lTot,<,0)
+'							Function.Intrinsic.Debug.Stop
+								f.Intrinsic.Math.Abs(v.Local.lTot,v.Local.ltemp)
+'								f.Intrinsic.Math.add(v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,v.Local.ltemp,v.Local.lRET)
+								'temp comment
+'								f.Intrinsic.Math.add(v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,v.Local.ltemp,v.Local.lRET)
+								v.Local.lRET.Set(v.Local.ltemp)
+							f.Intrinsic.Control.else
+'								f.Intrinsic.Math.sub(v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,v.Local.lTot,v.Local.lRET)
+								f.Intrinsic.Math.sub(v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,v.Local.lTot,v.Local.lRET)
+							f.Intrinsic.Control.EndIf		
+							
+'						f.Intrinsic.Control.Else
+''							f.Intrinsic.Math.sub(v.Local.lTot,v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,v.Local.lRET)
+'							f.Intrinsic.Math.sub(v.Local.lTot,v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,v.Local.lRET)
+						f.Intrinsic.Control.EndIf
+						
+'						f.Intrinsic.Math.Div(v.Local.lRET,v.DataTable.DTCopy(0).QTY_REORDER!FieldVal,v.local.fRet)
+						f.Intrinsic.Math.Div(v.Local.lRET,v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,v.local.fRet)
+						f.Intrinsic.Math.Ceiling(v.local.fRet,v.Local.lRET)
+						f.Intrinsic.Math.mult(v.DataTable.DTCopy(0).QTY_ORDER!FieldVal,v.Local.lRET,v.Local.lRET)
+						
+	'					po = v.Local.lRET
+	'					QTY_Total= PO + v.DataTable.DTCopy(v.Local.j).QTY_Total!FieldVal
+	'					"Forecast PO","Forecast PO",datenow,vend,
+	
+						f.Intrinsic.Math.Add(v.Local.lTot,v.Local.lRET,v.Local.lTot)
+'						f.Intrinsic.Math.Add(v.Local.lSeq,1,v.Local.lSeq)
+'						F.Data.DataTable.AddRowByMap("DTClone","WO*!*FTYPE*!*due_date*!*vendor*!*QTY*!*QTY_Total*!*ROW_SEQ*!*Part*!*Description*!*Type","Forecast","Forecast PO",v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,"vendor",v.Local.lRET,v.Local.lTot,v.Local.lSeq,v.DataView.DTLines!DVLines(v.Local.j).Part!FieldVal,v.DataView.DTLines!DVLines(v.Local.j).Description!FieldVal,0)
+
+						'UM_Purchasing,Amt_Cost,CType,VendorPart
+						
+'						'exclude Friday,sat&sunday
+'						f.Intrinsic.Date.Weekday(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.lDay)
+'						f.Intrinsic.Control.If(v.Local.lDay,=,6)
+'							f.Intrinsic.Date.DateAdd("d",3,v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.dDATEdue)
+'						f.Intrinsic.Control.elseIf(v.Local.lDay,=,7)
+'							f.Intrinsic.Date.DateAdd("d",2,v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.dDATEdue)
+'						f.Intrinsic.Control.elseIf(v.Local.lDay,=,1)
+'							f.Intrinsic.Date.DateAdd("d",1,v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.dDATEdue)
+'						f.Intrinsic.Control.Else
+'							v.Local.dDATEdue.Set(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal)
+'						f.Intrinsic.Control.EndIf
+
+						
+
+
+						f.Intrinsic.Date.Weekday(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.lDayDUEDATE)
+'						f.Intrinsic.Control.If(v.Local.lDay,=,v.Local.lDayDUEDATE)
+'							v.Local.dDATEdue.Set(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal)
+'						f.Intrinsic.Control.elseIf(v.Local.lDay,>,v.Local.lDayDUEDATE)
+'							f.Intrinsic.Math.sub(v.Local.lDay,v.Local.lDayDUEDATE,xx)
+'							f.Intrinsic.Math.Add(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,xx,v.Local.dDATEdue)
+'						f.Intrinsic.Control.elseIf(v.Local.lDay,<,v.Local.lDayDUEDATE)
+'							f.Intrinsic.Math.sub(v.Local.lDayDUEDATE,v.Local.lDay,xx)
+'							f.Intrinsic.Math.Add(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,xx,v.Local.dDATEdue)
+'						f.Intrinsic.Control.EndIf
+
+						'temp comment
+'						f.Intrinsic.Control.If(v.Local.lDay,=,v.Local.lDayDUEDATE)
+							v.Local.dDATEdue.Set(v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal)
+'						f.Intrinsic.Control.else
+'							f.Intrinsic.Math.Sub(v.Local.lDay,v.Local.lDayDUEDATE,v.Local.lDaysDiff)
+'							f.Intrinsic.Date.DateAdd("d",v.Local.lDaysDiff,v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.Local.dDATEdue)
+'						f.Intrinsic.Control.EndIf
+'						
+'						Function.Intrinsic.Debug.InvokeDebugger
+						
+						Function.Intrinsic.Debug.Stop
+						'temp comment
+'						f.Data.Datatable.SetValue("DTCopy",v.Local.J,"ROW_SEQ",v.Local.lSeq)
+'						f.Intrinsic.Math.Add(v.Local.lSeq,1,v.Local.lSeq)
+						
+'						F.Data.DataTable.AddRowByMap("DTClone","WO*!*FTYPE*!*due_date*!*vendor*!*QTY*!*QTY_Total*!*ROW_SEQ*!*Part*!*Description*!*Type*!*UM_Purchasing*!*Amt_Cost*!*CType*!*VendorPart*!*VName","Forecast","Forecast PO",v.DataView.DTLines!DVLines(v.Local.j).due_date!FieldVal,v.DataView.DTLines!DVLines(0).vendor!FieldVal,v.Local.lRET,v.Local.lTot,v.Local.lSeq,v.DataView.DTLines!DVLines(v.Local.j).Part!FieldVal,v.DataView.DTLines!DVLines(v.Local.j).Description!FieldVal,0,v.DataView.DTLines!DVLines(0).UM_Purchasing!FieldVal,v.DataView.DTLines!DVLines(0).Amt_Cost!FieldVal,v.DataView.DTLines!DVLines(0).CType!FieldVal,v.DataView.DTLines!DVLines(0).VendorPart!FieldVal,v.DataView.DTLines!DVLines(0).VName!FieldVal)
+						F.Data.DataTable.AddRowByMap("DTClone","WO*!*FTYPE*!*due_date*!*vendor*!*QTY*!*QTY_Total*!*ROW_SEQ*!*Part*!*Description*!*Type*!*UM_Purchasing*!*Amt_Cost*!*CType*!*VendorPart*!*VName","Forecast","Forecast PO",v.Local.dDATEdue,v.DataView.DTLines!DVLines(0).vendor!FieldVal,v.Local.lRET,v.Local.lTot,v.Local.lSeq,v.DataView.DTLines!DVLines(v.Local.j).Part!FieldVal,v.DataView.DTLines!DVLines(v.Local.j).Description!FieldVal,0,v.DataView.DTLines!DVLines(0).UM_Purchasing!FieldVal,v.DataView.DTLines!DVLines(0).Amt_Cost!FieldVal,v.DataView.DTLines!DVLines(0).CType!FieldVal,v.DataView.DTLines!DVLines(0).VendorPart!FieldVal,v.DataView.DTLines!DVLines(0).VName!FieldVal)
+
+						'temp comment
+						f.Intrinsic.Math.Add(v.Local.lSeq,1,v.Local.lSeq)
+						'temp comment
+'						f.Intrinsic.Math.add(v.Local.lTot,v.DataTable.DTCopy(v.Local.j).QTY!FieldVal,v.Local.lTot)
+'						
+''						v.Local.lLastTotBal.Set(v.Local.lTot)
+''						f.Data.Datatable.SetValue("DTCopy",v.Local.J,"QTY_Total",v.Local.lTot)
+'						
+'	'					f.Intrinsic.Math.Add(v.DataTable.DTCopy(0).QTY_ONHAND!FieldVal,v.Local.lRET,v.Local.lTot)
+'	'					f.Data.Datatable.SetValue("DTCopy",0,"QTY_ONHAND",v.Local.lTot)		
+
+						'reset
+'						v.Local.lTot.Set(0)
+					f.Intrinsic.Control.EndIf
+					
+					f.Data.Datatable.SetValue("DTCopy",v.Local.J,"QTY_Total",v.Local.lTot)
+					
+					'temp comment
+					f.Data.Datatable.SetValue("DTCopy",v.Local.J,"ROW_SEQ",v.Local.lSeq)
+					v.Local.lLastTotBal.Set(v.Local.lTot)
+					
+					f.Intrinsic.Control.Next(v.Local.j)
+'				Function.Intrinsic.Debug.Stop
+	
+					F.Data.DataTable.Merge("DTCopy","DTDash",True,2)
+					F.Data.Datatable.Close("DTCopy")
+					
+'					f.Intrinsic.String.Build("Part='{0}' and Due_date < #{1}#",V.Local.sRet(v.Local.i),v.DataTable.DTCopy(0).Due_date!FieldVal,v.Local.sPart)
+'					f.Data.DataView.SetFilter("DTLines","DVLines",v.Local.sPart)
+'					'filter leadtime
+''					Function.Intrinsic.Debug.Stop
+''					
+'					f.Intrinsic.Control.If(v.DataView.DTLines!DVLines.RowCount,>,0)
+'						F.Data.Datatable.Close("DTCopy")
+'						f.Data.DataView.ToDataTable("DTLines","DVLines","DTCopy")
+'						F.Data.DataTable.Merge("DTCopy","DTDash",True,2)
+'						F.Data.Datatable.Close("DTCopy")
+'					f.Intrinsic.Control.endif	
+				f.Intrinsic.Control.endif
+			f.Intrinsic.Control.endif
+		f.Intrinsic.Control.Next(v.Local.i)
+		F.Data.DataTable.Merge("DTClone","DTDash",True,2)
+		Function.Intrinsic.Debug.Stop
+		
+'		f.Data.DataView.Create("DTDash","DVDash")
+'		f.Data.DataView.SetSort("DTDash","DVDash","due_date")
+		f.Data.DataView.Create("DTDash","DVDash", 22,"","Part,ROW_SEQ,due_date")
+'		f.Data.DataView.Create("DTDash","DVDash", 22,"","Part,seq")
+'		f.Data.DataTable.SetValueFormat("DTDash",-1,"Description","Description",">")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Load_Grid)
+f.Intrinsic.Control.EndIf
+Function.Intrinsic.Debug.Stop
+
+
+
+F.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.Catch
+
+F.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+'	
+Program.Sub.Get_Data.End
+
+Program.Sub.ErrorMsg.Start
+v.Local.sError.Declare
+
+f.Intrinsic.String.Build("Project GCG_6819_MRPData.g2u {0}{0}Subroutine: {1}{0}Error: {2} with Description: {3}", v.Ambient.NewLine, v.Args.CurrentSub, v.Ambient.ErrorNumber, v.Ambient.ErrorDescription, v.Local.sError)
+
+f.Intrinsic.UI.Msgbox(v.Local.sError)
+
+Program.Sub.ErrorMsg.End
+
+Program.Sub.Load_Grid.Start
+f.Intrinsic.Control.Try
+
+
+V.Local.sSQL.Declare(String)
+V.Local.sType.Declare(String)
+v.Local.iTotClmn.Declare 
+v.Local.i.Declare
+v.Local.stitle.Declare
+'v.Local.sOrderNo.Declare
+'v.Local.sOrderLn.Declare
+v.local.iret.Declare 
+
+
+
+'f.Intrinsic.Control.CallSub(Check_Table)
+
+	gui.frmAddLines.GsGridLines.AddGridViewFromDataView("GridView","DTDash","DVDash")
+
+	gui.frmAddLines.GsGridLines.GetColumnCount("GridView",v.Local.iTotClmn)
+	f.Intrinsic.Math.Sub(v.Local.iTotClmn,1,v.Local.iTotClmn)
+	f.Intrinsic.Control.For(v.Local.i,0,v.Local.iTotClmn,1)
+		gui.frmAddLines.GsGridLines.GetColumnNamebyIndex("GridView",v.Local.i,v.Local.stitle)
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"AllowEdit",False)
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"ReadOnly",True)
+
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderFontBold","True")
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderBackColor","#7FFF00")
+		gui.frmAddLines.GsGridLines.SetColumnProperty("GridView",v.Local.stitle,"HeaderHAlignment","Center")
+	f.Intrinsic.Control.Next(v.Local.i)
+
+	gui.frmAddLines.GsGridLines.SetGridViewProperty("GridView", "ColumnPanelRowHeight", "40")
+	Gui.frmAddLines.GsGridLines.SetGridviewProperty("GridView","OptionsViewRowAutoHeight",True)
+
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Description","AllowEdit",True)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Description","ReadOnly",False)
+''	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_DESC","AllowEdit",True)
+''	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_DESC","ReadOnly",False)
+''	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","AllowEdit",True)
+''	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","ReadOnly",False)
+'	
+'	
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_CDE","MinWidth",120)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_CDE","MaxWidth",120)
+'	
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","MinWidth",70)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","MaxWidth",70)
+'	
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","MinWidth",150)
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Product_WHO","MaxWidth",150)
+'	
+
+'	Gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Action","CellHAlignment","center")
+
+'	PART QTY_ONHand,QTY_REORDER,QTY_ORder,vendor,Description,QTY,QTY_Total,FType,Due_date
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY_Total","Caption","Balance")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Due_date","Caption","Ship Date")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","FType","Caption","Type")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Vendor","Caption","Customer/Vendor")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Description","Caption","Description")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","VendorPart","Caption","Vendor Part")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","VName","Caption","Vendor Name")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","WO","Caption","Reference")
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY_ORder","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY_REORDER","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY_ONHand","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Location","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","type","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","SUFF","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","ROw_seq","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Ctype","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Seq","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","leaddate","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","UM_Purchasing","visible",false)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Amt_Cost","visible",false)
+
+	gui.frmAddLines.GsGridLines.SetGridViewProperty("GridView", "OptionsSelectionEnableAppearanceFocusedRow", "False") 
+	gui.frmAddLines.GsGridLines.SetGridviewProperty("GridView","OptionsFindAlwaysVisible",True)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView", "Due_date", "DisplayCustomDatetime", "d")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView", "leaddate", "DisplayCustomDatetime", "d")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY_Total","DisplayCustomNumeric","##,###,##0.00")
+	
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTY","DisplayCustomNumeric","###.00")
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","QTYONHAND","DisplayCustomNumeric","####.##")
+	
+	gui.frmAddLines.GsGridLines.AddStyleFormatCondition("GridView","FType","Parentorange","Equal","Job")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange","backcolor","Yellow")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView", "FType", "Parentorange", "FontBold",True) 
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange","ApplyToRow",True)
+	
+	gui.frmAddLines.GsGridLines.AddStyleFormatCondition("GridView","FType","Parentorange1","Equal","Forecast PO")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange1","backcolor","LightBlue")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView", "FType", "Parentorange1", "FontBold",True) 
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange1","ApplyToRow",True)
+	
+	gui.frmAddLines.GsGridLines.AddStyleFormatCondition("GridView","FType","Parentorange2","Equal","PO")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange2","backcolor","Orange")
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView", "FType", "Parentorange2", "FontBold",True) 
+	gui.frmAddLines.GsGridLines.SetStyleFormatConditionProperty("GridView","FType","Parentorange2","ApplyToRow",True)
+	
+'	'\U, stopping at \E
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","FType","EditMaskType","regex")
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","FType","EditMask","[\U\1\E \2]")
+'	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","FType","EditMaskAsDisplayFormat", true)
+	
+	gui.frmAddLines.GsGridLines.SetGridViewProperty("GridView","ShowGroupPanel",True)
+	gui.frmAddLines.GsGridLines.SetColumnProperty("GridView","Part","GroupIndex",0)
+	gui.frmAddLines.GsGridLines.ResumeLayout 
+
+	gui.frmAddLines.GsGridLines.MainView("GridView")
+	'Create Context Menus
+'	f.Intrinsic.Control.CallSub(create_menus)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+'	
+Program.Sub.Load_Grid.End
+
+
+Program.Sub.create_menus.Start
+f.Intrinsic.Control.Try
+
+	gui.frmAddLines..ContextMenuCreate("MNUGRID")
+	Gui.frmAddLines.GsGridLines.ContextMenuAttach("MNUGRID")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","ClearGrid",0,"Clear Grid")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","CopyfromExcel",0,"Copy from Excel")
+	Gui.frmAddLines..ContextMenuAddItem("MNUGRID","ExporttoExcel",0,"Copy to Excel")
+	
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","ClearGrid","MenuClearGrid")
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","CopyfromExcel","MenuCopyfromExcel")
+	Gui.frmAddLines..ContextMenuSetItemEventHandler("MNUGRID","ExporttoExcel","MenuCopyToExcel")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.create_menus.End
+Program.Sub.Check_Table.Start
+f.Intrinsic.Control.Try
+
+V.Local.bExists.Declare
+V.Local.sSQL.Declare
+
+'F.ODBC.Connection!con.TableExists("GCG_6074_ProductCDE",V.Local.bExists)
+'F.Intrinsic.Control.If(V.Local.bExists,=,False)
+'	V.Local.sSQL.Set("CREATE TABLE GCG_6074_ProductCDE(Product_CDE VARCHAR(10) NOT NULL,Product_DESC VARCHAR(50),Product_WHO VARCHAR(25)  );")
+'	F.ODBC.Connection!con.Execute(V.Local.sSQL)
+'f.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!conx.TableExists("GCG_6819_RPT",V.Local.bExists)
+F.Intrinsic.Control.If(V.Local.bExists,=,False)
+	V.Local.sSQL.Set("CREATE TABLE GCG_6819_RPT ( Trml VARCHAR(3), Part_NO VARCHAR(20),Vendor_Part VARCHAR(25),Part_Desc VARCHAR(30),Due_Date DATE,Requirement VARCHAR(10),Reference VARCHAR(10),QTY INTEGER,Vendor_Name VARCHAR(50),Piece_Price MONEY(8,2),PO_UoM VARCHAR(3),Vendor CHAR(6),FType VARCHAR(15),CType VARCHAR(10) );")
+	F.ODBC.Connection!conx.Execute(V.Local.sSQL)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+	
+Program.Sub.Check_Table.End
+
+Program.Sub.frmAddLines_UnLoad.Start
+f.Intrinsic.Control.Try
+
+f.Intrinsic.Control.CallSub(serialize)
+F.Intrinsic.Control.If(V.ODBC.conx.State,=,1)
+	
+	F.Intrinsic.Control.If(V.DataTable.DTDash.Exists,=,True)
+		f.Data.Datatable.Close("DTDash")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.DTClone.Exists,=,True)
+		f.Data.Datatable.Close("DTClone")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.DTLines.Exists,=,True)
+		f.Data.Dataview.Close("DTLines","DVLines")
+		f.Data.Datatable.Close("DTLines")
+	F.Intrinsic.Control.EndIf
+	
+	f.ODBC.Connection!conx.Close
+f.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+		
+Program.Sub.frmAddLines_UnLoad.End
+
+Program.Sub.cmdRefresh_Click.Start
+f.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.If(V.DataTable.DTDash.Exists,=,True)
+		f.Data.Datatable.Close("DTDash")
+		f.ODBC.Connection!conx.Close
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.DTClone.Exists,=,True)
+		f.Data.Datatable.Close("DTClone")
+	F.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.If(V.DataTable.DTLines.Exists,=,True)
+		f.Data.Dataview.Close("DTLines","DVLines")
+		f.Data.Datatable.Close("DTLines")
+	F.Intrinsic.Control.EndIf
+	
+'	F.Intrinsic.Control.If(V.ODBC.conx.State,=,1)
+'		f.ODBC.Connection!conx.Close
+'	F.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Get_Data)
+	
+
+	f.Intrinsic.Control.CallSub(deserialize)
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+Program.Sub.cmdExport_Click.Start
+f.Intrinsic.Control.Try
+
+v.Local.spath.Declare
+v.Local.bret.Declare
+v.Local.sRet.Declare
+v.Local.sFname.Declare
+v.Local.sFilter.Declare
+v.Local.i.Declare
+v.Local.sSql.Declare
+v.local.iRet.Declare
+v.Local.stimestamp.Declare
+
+Function.Intrinsic.UI.MsgBox("Do you want to Export?", "Confirm", 4,v.local.iRet)
+F.Intrinsic.Control.If(v.local.iRet,<>,6)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf	
+
+F.Intrinsic.UI.InvokeWaitDialog("Exporting....")
+v.Local.spath.Set(v.Screen.frmAddLines!txtEDIoutbound.text)
+Function.Intrinsic.File.DirExists(v.Local.spath,v.Local.bret)
+f.Intrinsic.Control.If(v.Local.bret)
+'vendorid,vendorname,invpart,vendorpart,partdes,ponum,qty,duedate'
+'	F.Intrinsic.String.Build("FType IN('1','Forecast PO')",v.Local.sFilter)
+'	v.Local.sFilter.Set("Type IN(0,1)")
+
+
+
+	f.Intrinsic.String.Build("[FType] IN ('PO','Forecast PO') and [CType] = 'EDI' ","",v.Local.sFilter)
+'	f.Data.DataView.SetFilter("DTDash","DVDash","Type IN(0,1) and CType='EDI'")
+	f.Data.DataView.SetFilter("DTDash","DVDash",v.Local.sFilter)
+'	f.Data.DataView.ToString("DTDash","DVDash","vendor*!*VName*!*part*!*vendorpart*!*Description*!*WO*!*qty*!*due_date",",",v.Ambient.NewLine,v.Local.sRet)
+	
+'	Function.Intrinsic.String.DelimitedStringToCSV(delimited string, row delimiter, field delimiter, string return)
+	
+'	f.Data.DataView.ToString("DTDash","DVDash","vendor*!*VName*!*part*!*vendorpart*!*Description*!*WO*!*qty*!*due_date","*!*",v.Ambient.NewLine,v.Local.sRet)
+'	Function.Intrinsic.String.DelimitedStringToCSV(v.Local.sRet,v.Ambient.NewLine,"*!*",v.Local.sRet)
+'	
+'	Function.Data.Datatable.SaveToCSV(Datatable, Fully Qualified Name As string, include header titles As Boolean)
+	
+	
+	'“AE850_[yyyyddmm_hhmmss].csv
+	'F.Intrinsic.String.Format(V.Local.sDate,"YYYYMMDD",V.Local.sDate)
+	'YYYYMMDDHHNNSS")
+	'V.Ambient.Date.FormatYYYYMMDD
+	f.Intrinsic.String.Build("{0}\AE850_{1}_{2}.csv",v.Local.spath,V.Ambient.Date.FormatYYYYMMDD,V.Ambient.NOW.FormatHHNNSS,v.Local.sFname)
+	f.Intrinsic.String.Replace(V.Local.sRet," 12:00:00 AM","",V.Local.sRet)
+	F.Intrinsic.File.String2File(V.Local.sFname,V.Local.sRet)
+'	f.Data.DataView.SetFilter("DTDash","DVDash","")
+
+'	Gui.Form.GsGridControlName.Export(sFilePath [string], conduit [string])
+'	Gui.frmAddLines.GsGridLines.Export(V.Local.sFname,"csv")
+
+	f.Data.DataView.ToDataTableDistinct("DTDash","DVDash","DTExport","vendor*!*VName*!*part*!*vendorpart*!*Description*!*WO*!*qty*!*due_date")
+'	Function.Data.DataTable.SetValueFormat("DTExport",-1,"due_date","due_date","mm/dd/yyyy")
+	f.Data.Datatable.AddColumn("DTExport","duedate","string")
+	Function.Data.DataTable.SetValueFormat("DTExport",-1,"due_date","duedate","mm/dd/yyyy")
+	f.Data.Datatable.RemoveColumn("DTExport","due_date")
+	F.Data.DataTable.SetValueFormat("DTExport",-1,"qty","qty","#######")
+	'to eliminate "," from vendor name
+	Function.Data.Datatable.SaveToCSV("DTExport",V.Local.sFname,False)
+	f.Data.Datatable.Close("DTExport")
+f.Intrinsic.Control.EndIf
+
+v.Local.spath.Set(v.Screen.frmAddLines!txtEDIPO.text)
+Function.Intrinsic.File.DirExists(v.Local.spath,v.Local.bret)
+f.Intrinsic.Control.If(v.Local.bret)
+	f.Intrinsic.String.Build("{0}\AE850_{1}_{2}.csv",v.Local.spath,V.Ambient.Date.FormatYYYYMMDD,V.Ambient.NOW.FormatHHNNSS,v.Local.sFname)
+	F.Intrinsic.File.String2File(V.Local.sFname,V.Local.sRet)
+f.Intrinsic.Control.EndIf
+
+
+v.Local.spath.Set(v.Screen.frmAddLines!txtPOEmail.text)
+Function.Intrinsic.File.DirExists(v.Local.spath,v.Local.bret)
+f.Intrinsic.Control.If(v.Local.bret)
+'	'“[Vendor_ID]_[yyyymmdd]_[hhmmss].pdf
+'	'email to vendor Contact
+'	f.Data.DataView.SetFilter("DTDash","DVDash","")
+'	f.Data.DataView.ToDataTableDistinct("DTDash","DVDash","DTVendor","Vendor")
+'	f.Data.DataView.Create("DTVendor","DVVendor")
+''	Function.Intrinsic.Debug.Stop
+'	
+'	f.Intrinsic.Control.For(v.Local.i,0,v.DataView.DTVendor!DVVendor.RowCount--,1)
+'		f.Intrinsic.Control.If(v.DataView.DTVendor!DVVendor(v.Local.i).vendor!FieldValtrim,<>,"")
+'			f.Intrinsic.String.Build("[vendor] = '{0}' and [FType] IN ('PO','Forecast PO') and [CType] = 'INTERNAL' ",v.DataView.DTVendor!DVVendor(v.Local.i).vendor!FieldVal,v.Local.sFilter)
+'			f.Data.DataView.SetFilter("DTDash","DVDash",v.Local.sFilter)
+'			f.Intrinsic.Control.If(v.DataView.DTDash!DVDash.RowCount,>,0)
+'			Function.Intrinsic.Debug.Stop
+'				
+'				f.Intrinsic.String.Build("{0}\{1}_{2}_{3}.XLSX",v.Local.spath,v.DataView.DTVendor!DVVendor(v.Local.i).vendor!FieldValtrim,V.Ambient.Date.FormatYYYYMMDD,V.Ambient.NOW.Formathhmmss,v.Local.sFname)
+'				'Reference, Type, Date, and Qty) t
+'	'			f.Data.DataView.ToString("DTDash","DVDash","WO*!*FTYPE*!*due_date*!*qty",",",v.Ambient.NewLine,v.Local.sRet)
+'	'			f.Intrinsic.String.Replace(V.Local.sRet," 12:00:00 AM","",V.Local.sRet)
+'	'			F.Intrinsic.File.String2File(V.Local.sFname,V.Local.sRet)
+'				Gui.frmAddLines.GsGridLines.Export(V.Local.sFname,"XLSX")
+
+'			f.Intrinsic.Control.EndIf
+'		f.Intrinsic.Control.EndIf
+'	f.Intrinsic.Control.Next(v.Local.i)
+'	f.Data.DataView.SetFilter("DTDash","DVDash","")
+
+	
+	f.Intrinsic.String.Build("delete from GCG_6819_RPT where Trml = '{0}'",v.Caller.Terminal,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)
+	f.Intrinsic.String.Build("[FType] IN ('PO','Forecast PO') and [CType] = 'EMAIL' ","",v.Local.sFilter)
+	f.Data.DataView.SetFilter("DTDash","DVDash",v.Local.sFilter)
+	f.Intrinsic.Control.If(v.DataView.DTDash!DVDash.RowCount,>,0)
+		F.Data.DataView.ToDataTable("DTDash","DVDash","DTUPDATE")
+		f.Data.Datatable.AddColumn("DTUPDATE","Trml","string",v.Caller.Terminal)
+		F.Data.DataTable.SaveToDB("DTUPDATE","conx","GCG_6819_RPT","Trml*!*ROw_seq*!*Part",256,"Trml@!@Trml*!*Part@!@Part_NO*!*VendorPart@!@Vendor_Part*!*ROw_seq@!@Requirement*!*Description@!@Part_Desc*!*Due_Date@!@Due_date*!*WO@!@Reference*!*QTY@!@QTY*!*VName@!@Vendor_Name*!*Amt_Cost@!@Piece_Price*!*UM_Purchasing@!@PO_UoM*!*Vendor@!@Vendor*!*FType@!@FType*!*CType@!@CType")
+		f.Data.Datatable.Close("DTUPDATE")
+		
+		f.Intrinsic.String.Build("select distinct GCG_6819_RPT.Vendor,email from GCG_6819_RPT join v_VENDOR_ADDL on GCG_6819_RPT.vendor = v_VENDOR_ADDL.vendor where Trml = '{0}'",v.Caller.Terminal,v.Local.sSql)
+		f.Data.Datatable.CreateFromSQL("DTVendor","conx",v.Local.Ssql)
+		f.Intrinsic.Control.CallSub(ReadCompanyOpt)
+		f.Intrinsic.Control.For(v.Local.i,0,v.DataTable.DTVendor.RowCount--,1)
+			f.Intrinsic.Control.CallSub(CreateVend_doc,"VEND",v.DataTable.DTVendor(v.Local.i).Vendor!FieldValtrim,"APath",v.Local.spath,"CMPY",V.Args.CMPY,"VEmail",v.DataTable.DTVendor(v.Local.i).Email!FieldValtrim)
+		f.Intrinsic.Control.Next(v.Local.i)
+		f.Data.Datatable.Close("DTVendor")
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.EndIf
+
+v.Local.spath.Set(v.Screen.frmAddLines!txtPOInternal.text)
+Function.Intrinsic.File.DirExists(v.Local.spath,v.Local.bret)
+f.Intrinsic.Control.If(v.Local.spath,<>,"")
+'Internal_PO.[yyyymmdd].[hhmmss].pdf
+	f.Data.DataView.SetFilter("DTDash","DVDash","CType='INTERNAL'")
+	
+	f.Intrinsic.String.Build("{0}_{1}",V.Ambient.Date.FormatYYYYMMDD,V.Ambient.Now.FormatHHNNSS,v.Local.stimestamp)
+	f.Intrinsic.String.Build("{0}\Internal_PO_{1}.XLSX",v.Local.spath,v.Local.stimestamp,v.Local.sFname)
+	Gui.frmAddLines.GsGridLines.Export(V.Local.sFname,"XLSX")
+	
+	v.Local.sTemp.Declare
+	v.Local.sRecipient.Declare
+	v.Local.iUsrId.Declare
+	v.Local.sTemp1.Declare
+	v.Local.sSender.Declare
+	
+	v.Local.sRecipient.Set(v.Screen.frmAddLines!txtEmailReport.text)
+	f.Intrinsic.Control.If(v.Local.sRecipient.trim,<>,"")
+		f.Intrinsic.String.Build("*!*{0}",v.Local.sRecipient,v.Local.sRecipient)
+		v.Local.sTemp.Set("")
+		
+		f.Global.Security.GetUserId(v.Caller.User,v.Caller.CompanyCode,v.Local.iUsrId)
+		f.Global.Security.GetFullName(v.Caller.User,v.Local.sTemp)
+		f.Global.Security.GetUserEmail(v.Caller.User,v.Local.sTemp1)
+		f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sTemp1,v.Local.sTemp,v.Local.sSender)
+		
+		f.Intrinsic.String.Build("Internal_PO_{1}.XLSX*!*{0}\",v.Local.spath,v.Local.stimestamp,v.Local.sFname)
+		
+		f.Global.Messaging.QueueMessage(v.Caller.CompanyCode,v.Local.iUsrID,"GCG_6819","Internal PO",v.Local.sSender,v.Local.sRecipient,"Internal PO",,,,,,,,,,,v.Local.sFname,False)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataView.SetFilter("DTDash","DVDash","")
+f.Intrinsic.Control.EndIf
+
+F.Intrinsic.UI.CloseWaitDialog
+f.Intrinsic.Control.Catch
+	F.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmdExport_Click.End
+
+Program.Sub.Deserialize.Start
+f.Intrinsic.Control.Try
+V.Local.sSerialize.Declare 
+
+
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GridView",6320,1000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.trim,<>,"")
+	Gui.frmAddLines.GsGridLines.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+
+Program.Sub.Deserialize.End
+
+Program.Sub.serialize.Start
+f.Intrinsic.Control.Try
+V.Local.sSerialize.Declare 
+
+Gui.frmAddLines.GsGridLines.Serialize("GridView",V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GridView",6320,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.If(v.Ambient.ErrorNumber,<>,121000)
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndTry
+Program.Sub.serialize.End
+
+Program.Sub.cmddirectory_Click.Start
+f.Intrinsic.Control.Try
+
+gui.frmAddLines.GsGridLines.Visible(false)
+gui.frmAddLines.frameDIR.Visible(True)
+
+	f.Intrinsic.Control.Catch
+		f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry
+Program.Sub.cmddirectory_Click.End
+
+Program.Sub.cmdEmailReport_Click.Start
+f.Intrinsic.Control.Try
+	V.Local.sFile.Declare
+	Function.Intrinsic.UI.FolderBrowser("",V.Local.sFile)
+	f.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+		gui.frmAddLines.txtEmailReport.text(V.Local.sFile)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdEmailReport_Click.End
+
+Program.Sub.cmdPOInternal_Click.Start
+f.Intrinsic.Control.Try
+	V.Local.sFile.Declare
+	Function.Intrinsic.UI.FolderBrowser("",V.Local.sFile)
+	f.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+		gui.frmAddLines.txtPOInternal.text(V.Local.sFile)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPOInternal_Click.End
+
+Program.Sub.cmdPOEmail_Click.Start
+f.Intrinsic.Control.Try
+V.Local.sFile.Declare
+	Function.Intrinsic.UI.FolderBrowser("",V.Local.sFile)
+	f.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+		gui.frmAddLines.txtPOEmail.text(V.Local.sFile)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPOEmail_Click.End
+
+Program.Sub.cmdPOEDI_Click.Start
+f.Intrinsic.Control.Try
+V.Local.sFile.Declare
+	Function.Intrinsic.UI.FolderBrowser("",V.Local.sFile)
+	f.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+		gui.frmAddLines.txtEDIPO.text(V.Local.sFile)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPOEDI_Click.End
+
+Program.Sub.cmdOutbound_Click.Start
+f.Intrinsic.Control.Try
+V.Local.sFile.Declare
+	Function.Intrinsic.UI.FolderBrowser("",V.Local.sFile)
+	f.Intrinsic.Control.If(V.Local.sFile,<>,"***CANCEL***")
+		gui.frmAddLines.txtEDIoutbound.text(V.Local.sFile)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdOutbound_Click.End
+
+
+Program.Sub.cmdEDISave_Click.Start
+f.Intrinsic.Control.Try
+
+
+	f.Intrinsic.Control.If(v.Screen.frmAddLines!txtEDIoutbound.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Data")
+		gui.frmAddLines.txtEDIoutbound.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.elseIf(v.Screen.frmAddLines!txtEDIPO.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Data")
+		gui.frmAddLines.txtEDIPO.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.elseIf(v.Screen.frmAddLines!txtPOEmail.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Data")
+		gui.frmAddLines.txtPOEmail.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.elseIf(v.Screen.frmAddLines!txtPOInternal.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Data")
+		gui.frmAddLines.txtPOInternal.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.elseIf(v.Screen.frmAddLines!txtEmailReport.Text,=,"")
+		f.Intrinsic.UI.Msgbox("Invalid Data")
+		gui.frmAddLines.txtEmailReport.SetFocus
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+V.Local.sFolder.Declare
+v.local.bRet.Declare
+V.Local.sFile.Declare
+v.Local.sRet.Declare
+
+	
+	F.Intrinsic.String.Build("{0}\custom",V.Caller.GlobalDir,V.Local.sFolder)
+	f.Intrinsic.File.DirExists(V.Local.sFolder,v.local.bRet)
+	f.Intrinsic.Control.If(v.local.bRet,=,False)
+		f.Intrinsic.File.CreateDir(V.Local.sFolder)
+	f.Intrinsic.Control.EndIf 
+	
+	F.Intrinsic.String.Build("{0}\6819",V.Local.sFolder,V.Local.sFolder)
+	f.Intrinsic.File.DirExists(V.Local.sFolder,v.local.bRet)
+	f.Intrinsic.Control.If(v.local.bRet,=,False)
+		f.Intrinsic.File.CreateDir(V.Local.sFolder)
+	f.Intrinsic.Control.EndIf 
+	
+	F.Intrinsic.String.Build("{0}\DirPathSetup",V.Local.sFolder,V.Local.sFolder)
+	f.Intrinsic.File.DirExists(V.Local.sFolder,v.local.bRet)
+	f.Intrinsic.Control.If(v.local.bRet,=,False)
+		f.Intrinsic.File.CreateDir(V.Local.sFolder)
+	f.Intrinsic.Control.EndIf 
+
+	v.Local.sEDIOUT.Declare
+	v.Local.sEDI.Declare
+	v.Local.sPO_Email.Declare
+	v.Local.sPO_Internal.Declare
+	v.Local.sEmail.Declare
+
+	v.Local.sEDIOUT.Set(v.Screen.frmAddLines!txtEDIoutbound.Text)
+	v.Local.sEDI.Set(v.Screen.frmAddLines!txtEDIPO.Text)
+	v.Local.sPO_Email.Set(v.Screen.frmAddLines!txtPOEmail.Text)
+	v.Local.sPO_Internal.Set(v.Screen.frmAddLines!txtPOInternal.Text)
+	v.Local.sEmail.Set(v.Screen.frmAddLines!txtEmailReport.Text)
+
+	f.Intrinsic.String.Build("{0}{1}",v.Local.sEDIOUT.trim,v.Ambient.NewLine,v.Local.sRet)
+	f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sRet,v.Local.sEDI.trim,v.Ambient.NewLine,v.Local.sRet)
+	f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sRet,v.Local.sPO_Email.trim,v.Ambient.NewLine,v.Local.sRet)
+	f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sRet,v.Local.sPO_Internal.trim,v.Ambient.NewLine,v.Local.sRet)
+	f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sRet,v.Local.sEmail.trim,v.Ambient.NewLine,v.Local.sRet)
+	
+	f.Intrinsic.String.Build("{0}\DirPathSetup.txt",V.Local.sFolder,V.Local.sFile)
+
+	F.Intrinsic.File.String2File(V.Local.sFile,V.Local.sRet)
+
+	gui.frmAddLines.frameDIR.Visible(false)
+	gui.frmAddLines.GsGridLines.Visible(true)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdEDISave_Click.End
+
+Program.Sub.ReadDirSetup.Start
+f.Intrinsic.Control.Try
+
+v.local.bEx.Declare
+V.Local.sFile.Declare
+v.Local.sRet.Declare
+v.Local.i.Declare
+
+	F.Intrinsic.String.Build("{0}\Custom\6819\DirPathSetup\DirPathSetup.txt",V.Caller.GlobalDir,V.Local.sFile)
+	F.Intrinsic.File.Exists(V.Local.sFile,V.Local.bEx)
+	f.Intrinsic.Control.If(V.Local.bEx,=,True)
+		f.Intrinsic.File.File2String(V.Local.sFile,V.Local.sRet)
+		f.Intrinsic.String.Split(V.Local.sRet,v.Ambient.NewLine,V.Local.sRet)
+		f.Intrinsic.Control.For(v.Local.i,0,V.Local.sRet.UBound,1)
+			f.Intrinsic.Control.If(V.Local.i,=,0)
+				gui.frmAddLines.txtEDIoutbound.Text(V.Local.sRet(0))
+			f.Intrinsic.Control.elseIf(V.Local.i,=,1)
+				gui.frmAddLines.txtEDIPO.Text(V.Local.sRet(1))
+			f.Intrinsic.Control.elseIf(V.Local.i,=,2)
+				gui.frmAddLines.txtPOEmail.Text(V.Local.sRet(2))
+			f.Intrinsic.Control.elseIf(V.Local.i,=,3)
+				gui.frmAddLines.txtPOInternal.Text(V.Local.sRet(3))
+			f.Intrinsic.Control.elseIf(V.Local.i,=,4)
+				gui.frmAddLines.txtEmailReport.Text(V.Local.sRet(4))
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.i)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ReadDirSetup.End
+
+Program.Sub.cmdEDISave2_Click.Start
+	gui.frmAddLines.frameDIR.Visible(false)
+	gui.frmAddLines.GsGridLines.Visible(true)
+Program.Sub.cmdEDISave2_Click.End
+
+Program.Sub.GsGridLines_ColumnFilterChanged.Start
+'	f.Intrinsic.UI.Msgbox(v.Args.ActiveFilterExpression)
+Program.Sub.GsGridLines_ColumnFilterChanged.End
+
+Program.Sub.CreateVend_doc.Start
+f.Intrinsic.Control.Try
+
+v.Local.sfile.Declare
+V.Local.sParams.Declare
+V.Local.sValues.Declare
+V.Local.bFileExists.Declare
+V.Local.iRet.Declare
+V.local.iBiRunID.Declare
+V.local.iBILogID.Declare
+V.Local.iRptid.Declare
+V.Local.sRet.Declare
+V.Local.stimestamp.Declare
+
+
+V.Local.sParams.Set("Trml*!*Vendor*!*CMPYAdd")
+f.Intrinsic.String.Build("{0}*!*{1}*!*{2}*!*{3}",v.Caller.Terminal,v.Args.VEND,V.Args.CMPY,V.Local.sValues)
+F.Global.BI.GetRunID(V.local.iBIRunID)
+
+F.Global.BI.GetIDFromName("GCG_6819_RPT.rpt",V.Local.iRptid)
+F.Global.BI.StartLogging(V.Local.iBIRunID,V.Local.iRptid,0,"",V.Local.iBILogID)
+
+F.Global.BI.StopLogging(V.local.iBILogID)
+
+
+f.Intrinsic.String.Build("{0}_{1}",V.Ambient.Date.FormatYYYYMMDD,V.Ambient.NOW.Formathhmmss,V.Local.stimestamp)
+f.Intrinsic.String.Build("{0}\{1}_{2}.pdf",v.Args.APath,v.Args.VEND,V.Local.stimestamp,v.Local.sfile)
+
+F.Global.BI.RunReportPreProcessor(V.local.iBiRunID,V.local.iBILogID,V.Local.sParams,V.Local.sValues,"",4,True,"",-1,"",0,v.Local.sfile,"",V.Local.iRet)
+
+
+f.Intrinsic.String.Build("{1}_{2}.pdf*!*{0}\",v.Args.APath,v.Args.VEND,V.Local.stimestamp,v.Local.sfile)
+
+f.Intrinsic.Control.If(v.Args.VEmail.Trim,<>,"")
+	f.Intrinsic.Control.CallSub(Export_Email,"Fname",v.Local.sfile,"VEmail",v.Args.VEmail)
+f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.CreateVend_doc.End
+
+Program.Sub.ReadCompanyOpt.Start
+f.Intrinsic.Control.Try
+v.Local.sRet.Declare
+v.Local.sRet1.Declare
+
+	'Get Company Name
+'	F.Global.General.ReadOption("401939",1,"","0000",v.Local.sRet)
+
+	'Get Company Address1
+	F.Global.General.ReadOption("401942",1,"","0000",v.Local.sRet)
+	'Get Company Address
+	F.Global.General.ReadOption("401939",1,"","0000",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet.trim,v.Local.sRet1.trim,v.Local.sRet)
+
+	'Get add2
+	F.Global.General.ReadOption("401940",1,"","0000",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+
+	'City
+	F.Global.General.ReadOption("401941",1,"","0003",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+
+	'State
+	F.Global.General.ReadOption("401941",1,"","0004",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0}, {1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+
+	'Zip
+	F.Global.General.ReadOption("401941",1,"","0005",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0} {1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+	
+
+''	attention
+'	F.Global.General.ReadOption("401941",1,"","0008",v.Local.sRet)
+'	gui.frmTestReport.lblcontactname.Caption(v.Local.sRet.Trim) 
+
+	f.Intrinsic.Control.If(V.Caller.GSSVersion,>,2019.1)
+		F.Global.General.ReadOption("402565",1,"","0000",v.Local.sRet1)
+		f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+	f.Intrinsic.Control.Else
+		'area
+		F.Global.General.ReadOption("401941",1,"","0010",v.Local.sRet1)
+		f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+		'PH
+		F.Global.General.ReadOption("401941",1,"","0011",v.Local.sRet1)
+		f.Intrinsic.String.Build("{0}-{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+		'PH
+		F.Global.General.ReadOption("401941",1,"","0012",v.Local.sRet1)
+		f.Intrinsic.String.Build("{0}-{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+	f.Intrinsic.Control.endif
+
+	'email
+	F.Global.General.ReadOption("401943",1,"","0000",v.Local.sRet1)
+	f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sRet,v.Local.sRet1.trim,v.Local.sRet)
+	
+	f.Intrinsic.String.Replace(v.Local.sRet,"*!*",v.ASCII.13,v.Local.sRet)
+	f.Intrinsic.Variable.AddRV("CMPY",v.Local.sRet)
+	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.ReadCompanyOpt.End
+
+Program.Sub.cmdForecast_Click.Start
+f.Intrinsic.Control.Try
+v.Local.sParams.Declare
+
+v.local.iRet.Declare
+
+Function.Intrinsic.UI.MsgBox("Do you want to Import Forecast?", "Confirm", 4,v.local.iRet)
+F.Intrinsic.Control.If(v.local.iRet,<>,6)
+	f.Intrinsic.Control.ExitSub
+f.Intrinsic.Control.EndIf	
+
+F.Intrinsic.String.Build("{0}!*!INV507/U",V.Caller.CompanyCode,V.Local.sParams)
+Function.Global.General.CallWrapperSync(51, V.Local.sParams)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdForecast_Click.End
+
+Program.Sub.Export_Email.Start
+f.Intrinsic.Control.Try
+v.Local.sTemp.Declare
+	v.Local.sRecipient.Declare
+	v.Local.iUsrId.Declare
+	v.Local.sTemp1.Declare
+	v.Local.sSender.Declare
+	
+	
+	v.Local.sRecipient.Set(v.Args.VEmail)
+	f.Intrinsic.Control.If(v.Local.sRecipient.trim,<>,"")
+		f.Intrinsic.String.Build("*!*{0}",v.Local.sRecipient,v.Local.sRecipient)
+		v.Local.sTemp.Set("")
+		
+		f.Global.Security.GetUserId(v.Caller.User,v.Caller.CompanyCode,v.Local.iUsrId)
+		f.Global.Security.GetFullName(v.Caller.User,v.Local.sTemp)
+		f.Global.Security.GetUserEmail(v.Caller.User,v.Local.sTemp1)
+		f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sTemp1,v.Local.sTemp,v.Local.sSender)
+
+		F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,v.Local.iUsrID,"GCG_6819","EMAIL PO",v.Local.sSender,V.Local.sRecipient,"Internal PO",5,"",False,"","","","","","","",v.Args.Fname,False)
+			
+	
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub(ErrorMsg, CurrentSub, v.Ambient.CurrentSubroutine)
+	f.Intrinsic.Control.EndTry	
+Program.Sub.Export_Email.End
+
+Program.Sub.Comments.Start
+${$5$}$3.0.0.0$}$1
+${$6$}$rnair$}$20220629153748607$}$JUGEdtlNdgRUPvge2DQ26cJ2Nib0UUk8GgD1oEhXIUA4YdgZICdIu+CRlxQxoAzxhCudR4jOBdg=
+Program.Sub.Comments.End
